@@ -85,7 +85,12 @@ pause;
 %The ode45 solver is used for the system of differential equations
 
 t0 = 0; tf = 60; time = [0 tf];
-x0 = [-pi/18 0 pi/6 0];
+
+%set initial conditions
+%    [q1 d(q1)/d(t) q2 d(q2)/d(t)]
+x0 = [-pi/18 0 0 0];
+
+
 [t,xs] = ode45(@RR_Lagr, time, x0);
 x1 = xs(:,1);
 x2 = xs(:,2);
